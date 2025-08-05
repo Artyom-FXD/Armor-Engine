@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.20)
 
 project(armor_engine)
 
-target_include_directories(ArmorEngine PRIVATE vulkan)
+target_include_directories(ArmorEngine PRIVATE libs)
 
 add_custom_command(
   OUTPUT vert.spv frag.spv
