@@ -5,11 +5,12 @@ project(armor_engine)
 target_include_directories(ArmorEngine PRIVATE vulkan)
 
 add_custom_command(
-  OUTPUT shader.vert.spv
-  COMMAND ${Vulkan_GLSLC_EXECUTABLE} shader.vert -o shader.vert.spv
-  DEPENDS shader.vert
+  OUTPUT vert.spv frag.spv
+  COMMAND ${Vulkan_GLSLC_EXECUTABLE} shader.vert -o vert.spv
+  COMMAND ${Vulkan_GLSLC_EXECUTABLE} shader.frag -o frag.spv
+  DEPENDS shader.vert shader.frag
 )
 
 set(EXE main.cpp)
 
-add_executable(Armor ${EXE})
+add_executable(ArmorEngine main.cpp vert.spv frag.spv)
