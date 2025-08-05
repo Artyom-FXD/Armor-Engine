@@ -1,6 +1,7 @@
 #include <SFML/Graphics.hpp>
 #include <map>
 #include <vector>
+#include <string>
 
 struct Province {
     int id;
